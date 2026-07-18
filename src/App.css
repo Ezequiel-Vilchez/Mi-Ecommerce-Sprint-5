@@ -113,7 +113,7 @@ body {
   font-family: Arial, sans-serif;
   color: #ffffff;
   margin: 0;
-  padding: 2rem;
+  padding: 0;
 }
 
 /* CONTENEDOR PRINCIPAL */
@@ -285,4 +285,186 @@ h3 {
 
 .footer a:hover {
   color: #fff;
+}
+
+/* =========================================
+   NUEVO LAYOUT: SIDEBAR Y MAIN AREA
+========================================= */
+
+.app-layout {
+  display: flex;
+  min-height: 100vh;
+  background-color: #121212; /* Mantiene tu fondo oscuro */
+  width: 100%;
+}
+
+/* --- SIDEBAR --- */
+.sidebar {
+  width: 296px;
+  background-color: #000000;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  z-index: 1000;
+  transition: left 0.3s ease-in-out;
+  /* Aplicamos tu borde RGB animado al borde derecho del menú */
+  border-right: 3px solid;
+  border-image: linear-gradient(45deg, red, yellow, lime, cyan, blue, magenta, red) 1;
+  animation: borde-rgb 5s linear infinite;
+}
+
+.sidebar-header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-img {
+  width: 130px;
+  height: 60px;
+  object-fit: contain;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  flex-grow: 1;
+}
+
+.sidebar-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  transition: background-color 0.2s;
+}
+
+.sidebar-nav a:hover {
+  background-color: #1e1e1e;
+  border-left: 4px solid red; /* Toque visual al pasar el mouse */
+}
+
+.sidebar-footer {
+  padding: 20px;
+  border-top: 1px solid #333;
+}
+
+.perfil-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: white;
+  text-decoration: none;
+}
+
+.icono-perfil {
+  width: 30px;
+  height: 30px;
+  background-color: white;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+/* --- MAIN AREA --- */
+.main-area {
+  flex-grow: 1;
+  width: calc(100% - 296px); 
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Ocupa exactamente el 100% del alto de la pantalla */
+  overflow: hidden; /* Evita scroll en toda la página, se lo daremos solo al contenido */
+}
+
+.main-header {
+  height: 72px; /* Requisito exacto de la User Story */
+  min-height: 72px; 
+  width: 100%; 
+  background-color: #000000;
+  border-bottom: 2px solid #333;
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+  box-sizing: border-box;
+  flex-shrink: 0; /* Evita que el header se aplaste si el contenido crece */
+}
+
+.header-title {
+  color: white;
+  margin: 0;
+  font-size: 1.2rem;
+  margin-left: 10px;
+}
+
+.content-area {
+  height: calc(100vh - 72px); /* Toma el alto total menos los 72px del Header */
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Permite desplazamiento vertical SOLO aquí si excede el viewport */
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.d-mobile {
+  display: none;
+}
+
+.overlay {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .sidebar {
+    position: fixed;
+    left: -296px; /* Oculto por defecto */
+  }
+
+  .sidebar.open {
+    left: 0; /* Visible cuando se activa */
+  }
+
+  .main-area {
+    width: 100%; /* Toma todo el ancho disponible */
+  }
+
+  /* Mostrar los botones de control del menú */
+  .d-mobile {
+    display: block;
+  }
+  
+  .main-header .d-mobile {
+    margin-right: 15px; /* Separación entre el botón y el título */
+  }
+  
+
+  /* Fondo oscuro semitransparente para resaltar el menú sobre el Main Area */
+  .overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 999;
+  }
 }
