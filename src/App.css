@@ -231,6 +231,7 @@ h3 {
 
 /* RESPONSIVE: OCULTAR VIDEOS EN MÓVIL */
 @media (max-width: 768px) {
+
   .anuncio {
     display: none;
   }
@@ -246,26 +247,29 @@ h3 {
   }
 
 }
+
 .enlace-carrito {
-    position: relative;
-    display: inline-block;
+  position: relative;
+  display: inline-block;
 }
+
 .badge-carrito {
-    position: absolute;
-    top: -5px;
-    right: -5px;
-    background-color: red;
-    color: white;
-    font-size: 12px;
-    font-weight: bold;
-    min-width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    pointer-events: none; 
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  min-width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
 }
+
 .footer {
   background-color: #000000;
   color: white;
@@ -294,7 +298,8 @@ h3 {
 .app-layout {
   display: flex;
   min-height: 100vh;
-  background-color: #121212; /* Mantiene tu fondo oscuro */
+  background-color: #121212;
+  /* Mantiene tu fondo oscuro */
   width: 100%;
 }
 
@@ -346,7 +351,8 @@ h3 {
 
 .sidebar-nav a:hover {
   background-color: #1e1e1e;
-  border-left: 4px solid red; /* Toque visual al pasar el mouse */
+  border-left: 4px solid red;
+  /* Toque visual al pasar el mouse */
 }
 
 .sidebar-footer {
@@ -373,24 +379,28 @@ h3 {
 /* --- MAIN AREA --- */
 .main-area {
   flex-grow: 1;
-  width: calc(100% - 296px); 
+  width: calc(100% - 296px);
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Ocupa exactamente el 100% del alto de la pantalla */
-  overflow: hidden; /* Evita scroll en toda la página, se lo daremos solo al contenido */
+  height: 100vh;
+  /* Ocupa exactamente el 100% del alto de la pantalla */
+  overflow: hidden;
+  /* Evita scroll en toda la página, se lo daremos solo al contenido */
 }
 
 .main-header {
-  height: 72px; /* Requisito exacto de la User Story */
-  min-height: 72px; 
-  width: 100%; 
+  height: 72px;
+  /* Requisito exacto de la User Story */
+  min-height: 72px;
+  width: 100%;
   background-color: #000000;
   border-bottom: 2px solid #333;
   display: flex;
   align-items: center;
   padding: 0 20px;
   box-sizing: border-box;
-  flex-shrink: 0; /* Evita que el header se aplaste si el contenido crece */
+  flex-shrink: 0;
+  /* Evita que el header se aplaste si el contenido crece */
 }
 
 .header-title {
@@ -401,11 +411,13 @@ h3 {
 }
 
 .content-area {
-  height: calc(100vh - 72px); /* Toma el alto total menos los 72px del Header */
+  height: calc(100vh - 72px);
+  /* Toma el alto total menos los 72px del Header */
   width: 100%;
   padding: 20px;
   box-sizing: border-box;
-  overflow-y: auto; /* Permite desplazamiento vertical SOLO aquí si excede el viewport */
+  overflow-y: auto;
+  /* Permite desplazamiento vertical SOLO aquí si excede el viewport */
 }
 
 .menu-btn {
@@ -433,28 +445,36 @@ h3 {
 }
 
 @media (max-width: 1024px) {
+  .Titulos1 {
+    font-size: 12vw;
+  }
+
   .sidebar {
     position: fixed;
-    left: -296px; /* Oculto por defecto */
+    left: -296px;
+    /* Oculto por defecto */
   }
 
   .sidebar.open {
-    left: 0; /* Visible cuando se activa */
+    left: 0;
+    /* Visible cuando se activa */
   }
 
   .main-area {
-    width: 100%; /* Toma todo el ancho disponible */
+    width: 100%;
+    /* Toma todo el ancho disponible */
   }
 
   /* Mostrar los botones de control del menú */
   .d-mobile {
     display: block;
   }
-  
+
   .main-header .d-mobile {
-    margin-right: 15px; /* Separación entre el botón y el título */
+    margin-right: 15px;
+    /* Separación entre el botón y el título */
   }
-  
+
 
   /* Fondo oscuro semitransparente para resaltar el menú sobre el Main Area */
   .overlay {
@@ -467,4 +487,48 @@ h3 {
     background: rgba(0, 0, 0, 0.7);
     z-index: 999;
   }
+}
+
+/* --- ESTILOS DE RUTAS ACTIVAS --- */
+.sidebar-nav .nav-item {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 15px 30px;
+  font-size: 16px;
+  transition: all 0.2s;
+  display: block;
+  margin: 5px 15px;
+  /* Margen para que el fondo gris no toque los bordes */
+  border-radius: 8px;
+  /* Bordes redondeados estilo botón */
+}
+
+/* Estado hover general */
+.sidebar-nav .nav-item:hover {
+  background-color: #1e1e1e;
+}
+
+
+.sidebar-nav .nav-item.active {
+  background-color: #333333;
+  /* Fondo gris claro */
+  border-left: 4px solid red;
+  /* Indicador visual izquierdo */
+  font-weight: bold;
+}
+
+/* Estado activo para el perfil */
+.sidebar-footer .perfil-link {
+  padding: 10px 15px;
+  border-radius: 8px;
+  transition: all 0.2s;
+}
+
+.sidebar-footer .perfil-link:hover {
+  background-color: #1e1e1e;
+}
+
+.sidebar-footer .perfil-link.active {
+  background-color: #333333;
+  border-left: 4px solid red;
 }
