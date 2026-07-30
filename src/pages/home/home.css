@@ -1,0 +1,148 @@
+/* --- Dashboard Home --- */
+.dashboard-home {
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #ffffff; /* Ajustado para tu tema oscuro */
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-header h1 {
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 8px;
+}
+
+.dashboard-header p {
+  color: #a1a1aa;
+  font-size: 1.1rem;
+}
+
+/* --- Módulos / Bloques de Acciones --- */
+.dashboard-modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.dashboard-module {
+  background-color: #1e1e1e; /* Color de tus tarjetas de producto */
+  border: 1px solid #333;
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  display: flex;
+  flex-direction: column;
+}
+
+.module-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.module-icon {
+  font-size: 1.5rem;
+  background-color: #333333;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+}
+
+.module-header h2 {
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+/* Indicadores de Cantidad (KPIs) */
+.module-kpi {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 30px;
+}
+
+.kpi-number {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #ff2b2b; /* Tu rojo característico */
+  line-height: 1;
+}
+
+.kpi-label {
+  font-size: 1rem;
+  color: #a1a1aa;
+  font-weight: 500;
+}
+
+/* Botones dentro de los bloques */
+.module-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.action-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background-color 0.2s ease;
+  cursor: pointer;
+}
+
+.action-btn.primary {
+  background-color: #ff2b2b; /* Botón primario rojo */
+  color: white;
+  border: none;
+}
+
+.action-btn.primary:hover {
+  background-color: #cc0000;
+}
+
+.action-btn.secondary {
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid #555;
+}
+
+.action-btn.secondary:hover {
+  background-color: #333333;
+}
+
+/* --- Placeholder Gráficos --- */
+.charts-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 16px;
+  color: #ffffff;
+}
+
+.chart-placeholder {
+  background-color: #1e1e1e;
+  border-radius: 12px;
+  padding: 40px;
+  border: 2px dashed #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 200px;
+}
+
+.chart-skeleton {
+  color: #a1a1aa;
+  font-style: italic;
+}
