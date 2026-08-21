@@ -4,7 +4,9 @@ import { NavLink, Link } from 'react-router-dom';
 const MainMenu = ({ isOpen, toggleSidebar, closeMenu }) => {
     return (
         <>
+
             {isOpen && <div className="overlay" onClick={closeMenu}></div>}
+
 
             <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
                 <div className="sidebar-header">
